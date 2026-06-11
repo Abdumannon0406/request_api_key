@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "YOUR_API_KEY_HERE"
+API_KEY = "78e705ad8ad443348d00e29d1083a4c8"
 
 
 def get_random_card():
@@ -11,5 +11,11 @@ def get_random_card():
     - Send a GET request to: https://randommer.io/api/Card
     - Include the API key in the X-Api-Key header
     - Print the response JSON containing card information
+    
     """
-    pass
+    headers ={ "X-Api-Key": API_KEY }
+    r = requests.get("https://randommer.io/api/Card",headers=headers)
+
+    print(r.text)
+
+get_random_card()
